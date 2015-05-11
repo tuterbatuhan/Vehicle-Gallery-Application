@@ -1,0 +1,203 @@
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+
+public class MainWindow {
+	
+	private JPanel mainPanel;
+	private JFrame frame;
+	private SignInPanel signInPanel;
+	private SignUpPanel signUpPanel;
+	private SignInCustomerPanel signInCustomerPanel;
+	private SignInGalleryOwnerPanel signInGalleryOwnerPanel;
+	private GalleryInventoryOwnerPanel galleryInventoryOwnerPanel;
+	private GalleryInventoryCustomerPanel galleryInventoryCustomerPanel;
+	private ButtonListener l;
+	private ArrayList <User> users;
+	private User curUser;
+	private ArrayList<Gallery> galleries;
+	
+	public MainWindow(){
+		users = new ArrayList<User>();
+		galleries = new ArrayList<Gallery>();
+		Customer cust1 = new Customer("Banu", "Korkmaz", "bkorkmaz", "1234");
+		Gallery g = new Gallery("Opel", 5);
+		galleries.add(g);
+		System.out.println(cust1.getUserName());
+		System.out.println(cust1.signIn("bkorkmaz", "1234"));
+		GalleryOwner gal1 = new GalleryOwner("Akif", "Karakayalı", "akara", "4321", g);
+		users.add(cust1);
+		users.add(gal1);
+		l = new ButtonListener();
+		frame = new JFrame("GALLERYMANIA");
+		mainPanel = new JPanel();
+		signInPanel = new SignInPanel();
+		signUpPanel = new SignUpPanel();
+		signInGalleryOwnerPanel = new SignInGalleryOwnerPanel();
+		signInCustomerPanel = new SignInCustomerPanel();
+		galleryInventoryOwnerPanel = new GalleryInventoryOwnerPanel();
+		galleryInventoryCustomerPanel = new GalleryInventoryCustomerPanel();
+		galleryInventoryOwnerPanel.setVisible(false);
+		signInCustomerPanel.setVisible(false);
+		signUpPanel.setVisible(false);
+		signInGalleryOwnerPanel.setVisible(false);
+		galleryInventoryCustomerPanel.setVisible(false);
+		mainPanel.add(signInPanel);
+		mainPanel.add(signUpPanel);
+		mainPanel.add(signInGalleryOwnerPanel);
+		mainPanel.add(signInCustomerPanel);
+		mainPanel.add(galleryInventoryOwnerPanel);
+		mainPanel.add(galleryInventoryCustomerPanel);
+		frame.getContentPane().add(mainPanel);
+		frame.pack();
+		frame.setVisible(true);
+		frame.setPreferredSize(new Dimension(640,480));
+		signInPanel.signupbutton.addActionListener(l);
+		signInPanel.signinbutton.addActionListener(l);
+		signInCustomerPanel.backtomainbuton.addActionListener(l);
+		signInGalleryOwnerPanel.backtomainbutton.addActionListener(l);
+		signUpPanel.backtomainbutton.addActionListener(l);
+		signUpPanel.createuserbutton.addActionListener(l);
+		signInGalleryOwnerPanel.opengalleryinventorybutton.addActionListener(l);
+		signInCustomerPanel.openinventorybutton.addActionListener(l);
+		galleryInventoryOwnerPanel.backtosigninownerpagebutton.addActionListener(l);
+		galleryInventoryCustomerPanel.backtosignincustomerpagebutton.addActionListener(l);
+	}
+	public void display()
+	{
+		frame.pack();
+		frame.setVisible(true);
+	}
+	private class ButtonListener  implements ActionListener{
+			
+		public void actionPerformed(ActionEvent event)
+		{
+			if(event.getSource() == signInPanel.signupbutton)
+			{
+				String[] userType = {"customer","galleryowner"};
+				signUpPanel.usertypecombobox.removeItemAt(0);
+				signUpPanel.usertypecombobox.removeItemAt(0);
+				signUpPanel.usertypecombobox.removeItemAt(0);
+				signUpPanel.usertypecombobox.removeItemAt(0);
+				signUpPanel.usertypecombobox.insertItemAt(userType[0], 0);
+				signUpPanel.usertypecombobox.insertItemAt(userType[1], 1);
+				signUpPanel.setVisible(true);
+				signInPanel.setVisible(false);
+			}
+			if(event.getSource() == signInPanel.signinbutton)
+			{
+				for(int i = 0; i<users.size(); i++)
+				{
+					System.out.println(signInPanel.usernametextfield.getText());
+					char[] p = signInPanel.passwordtextfield.getPassword();
+					String pass = "";
+					for(int j = 0; j<p.length;j++)
+						pass = pass + p[j];
+					if(users.get(i).signIn(signInPanel.usernametextfield.getText(),pass)){
+						if(users.get(i).getUserType().equals("customer")){
+							System.out.println(users.get(i).getUserType());
+							curUser = users.get(i);
+							signInCustomerPanel.showcustomernamelabel.setText(curUser.getName());
+							signInCustomerPanel.showcustomersurnamelabel.setText(curUser.getSurname());
+							signInCustomerPanel.showusernamelabel.setText(curUser.getUserName());
+							signInPanel.setVisible(false);
+							signInCustomerPanel.setVisible(true);
+							break;
+						}
+						else
+						{
+							curUser = users.get(i);
+							GalleryOwner g = (GalleryOwner)curUser;
+							signInGalleryOwnerPanel.showgalleryname.setText(g.getGallery().getGalleryName());
+							signInGalleryOwnerPanel.showgalleryownername.setText(curUser.getName());
+							signInGalleryOwnerPanel.showgalleryownersurname.setText(curUser.getSurname());
+							signInGalleryOwnerPanel.showgalleryownerusername.setText(curUser.getUserName());
+							signInPanel.setVisible(false);
+							signInGalleryOwnerPanel.setVisible(true);
+							break;
+						}
+							
+					}
+						
+				}
+			}
+			if(event.getSource() == signInGalleryOwnerPanel.backtomainbutton)
+			{
+				
+				signInPanel.setVisible(true);
+				signInGalleryOwnerPanel.setVisible(false);
+			}
+			if(event.getSource() == signInCustomerPanel.backtomainbuton)
+			{
+				
+				signInPanel.setVisible(true);
+				signInCustomerPanel.setVisible(false);
+			}
+			if(event.getSource() == signUpPanel.backtomainbutton)
+			{
+				
+				signInPanel.setVisible(true);
+				signUpPanel.setVisible(false);
+			}
+			if(event.getSource() == signUpPanel.createuserbutton)
+			{
+				String name = signUpPanel.namefield.getText();
+				String surname = signUpPanel.surnamefield.getText();
+				String userName = signUpPanel.usernamefield.getText();
+				String password = signUpPanel.passwordfield.getText();
+				boolean add = true;
+				for(int i = 0; i < users.size(); i++)
+					if(users.get(i).getUserName().equals(userName)){
+						add = false;
+						JOptionPane.showMessageDialog(frame, "This username already exists!", "Warning" , JOptionPane.PLAIN_MESSAGE);
+					}
+				if(signUpPanel.usertypecombobox.getSelectedIndex() == 1){
+					for(int i = 0; i < galleries.size(); i++)
+						if(signUpPanel.gallerynamefield.getText().equals(galleries.get(i).getGalleryName())){
+							add = false;
+							JOptionPane.showMessageDialog(frame, "This gallery already exists!", "Warning" , JOptionPane.PLAIN_MESSAGE);
+						}
+				}
+				
+				if(add){
+					if(signUpPanel.usertypecombobox.getSelectedIndex() == 0){
+						Customer cust = new Customer(name, surname, userName, password);
+						users.add(cust);
+					}
+					else{
+						Gallery g = new Gallery(signUpPanel.gallerynamefield.getText(),10);
+						GalleryOwner gal = new GalleryOwner(name, surname, userName, password,g);
+						users.add(gal);
+					}
+				}
+				signInPanel.setVisible(true);
+				signUpPanel.setVisible(false);
+			}
+			if(event.getSource() == signInGalleryOwnerPanel.opengalleryinventorybutton){
+				signInGalleryOwnerPanel.setVisible(false);
+				galleryInventoryOwnerPanel.setVisible(true);
+				
+			}
+			if(event.getSource() == signInCustomerPanel.openinventorybutton){
+				signInCustomerPanel.setVisible(false);
+				galleryInventoryCustomerPanel.setVisible(true);
+			}
+			if(event.getSource() == galleryInventoryOwnerPanel.backtosigninownerpagebutton){
+				signInGalleryOwnerPanel.setVisible(true);
+				galleryInventoryOwnerPanel.setVisible(false);
+				
+			}
+			if(event.getSource() == galleryInventoryCustomerPanel.backtosignincustomerpagebutton){
+				signInCustomerPanel.setVisible(true);
+				galleryInventoryCustomerPanel.setVisible(false);
+				
+			}
+		}		
+	}
+}
