@@ -5,16 +5,12 @@
  */
 package GUI;
 
-/**
- *
- * @author Batu
- */
-public class GalleryInventoryOwner extends javax.swing.JPanel {
+public class GalleryInventoryOwnerPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form GalleryInventoryOwner
      */
-    public GalleryInventoryOwner() {
+    public GalleryInventoryOwnerPanel() {
         initComponents();
     }
 
@@ -182,20 +178,20 @@ public class GalleryInventoryOwner extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JTable SearchVehicleTable;
-    private javax.swing.JButton backtosigninownerpagebutton;
-    private javax.swing.JLabel changeinventorylabel;
-    private javax.swing.JComboBox enginetypecombobox;
-    private javax.swing.JLabel enginetypelabel;
-    private javax.swing.JComboBox enginevolumecombobox;
-    private javax.swing.JLabel enginevolumelabel;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel quantitylabel;
-    private javax.swing.JButton searchvehiclebutton;
-    private javax.swing.JButton setcapacitybutton;
-    private javax.swing.JTextField setquantitiyfield;
-    private javax.swing.JButton setstockbutton;
-    private javax.swing.JComboBox vehicletypecombobox;
-    private javax.swing.JLabel vehicletypelabel;
+    public javax.swing.JTable SearchVehicleTable;
+    public javax.swing.JButton backtosigninownerpagebutton;
+    public javax.swing.JLabel changeinventorylabel;
+    public javax.swing.JComboBox enginetypecombobox;
+    public javax.swing.JLabel enginetypelabel;
+    public javax.swing.JComboBox enginevolumecombobox;
+    public javax.swing.JLabel enginevolumelabel;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel quantitylabel;
+    public javax.swing.JButton searchvehiclebutton;
+    public javax.swing.JButton setcapacitybutton;
+    public javax.swing.JTextField setquantitiyfield;
+    public javax.swing.JButton setstockbutton;
+    public javax.swing.JComboBox vehicletypecombobox;
+    public javax.swing.JLabel vehicletypelabel;
     // End of variables declaration                   
 }
