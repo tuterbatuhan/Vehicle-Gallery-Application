@@ -1,0 +1,8 @@
+public class GalleryMainaMain {
+	
+	public static void main(String[] args){
+		MainWindow main = new MainWindow();
+		main.display();
+	}
+
+}
