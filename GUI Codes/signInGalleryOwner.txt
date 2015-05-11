@@ -5,16 +5,12 @@
  */
 package GUI;
 
-/**
- *
- * @author Batu
- */
-public class signInGalleryOwner extends javax.swing.JPanel {
+public class SignInGalleryOwnerPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form signInGalleryOwner
      */
-    public signInGalleryOwner() {
+    public SignInGalleryOwnerPanel() {
         initComponents();
     }
 
@@ -104,14 +100,14 @@ public class signInGalleryOwner extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton backtomainbutton;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton opengalleryinventorybutton;
-    private javax.swing.JLabel showgalleryname;
-    private javax.swing.JLabel showgalleryownername;
-    private javax.swing.JLabel showgalleryownersurname;
-    private javax.swing.JLabel showgalleryownerusername;
+    public javax.swing.JButton backtomainbutton;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JButton opengalleryinventorybutton;
+    public javax.swing.JLabel showgalleryname;
+    public javax.swing.JLabel showgalleryownername;
+    public javax.swing.JLabel showgalleryownersurname;
+    public javax.swing.JLabel showgalleryownerusername;
     // End of variables declaration                   
 }
