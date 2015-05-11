@@ -5,16 +5,12 @@
  */
 package GUI;
 
-/**
- *
- * @author Batu
- */
-public class GalleryManiaUI extends javax.swing.JPanel {
+public class SignInPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form GalelryManiaUI
      */
-    public GalleryManiaUI() {
+    public SignInPanel() {
         initComponents();
     }
 
@@ -81,11 +77,11 @@ public class GalleryManiaUI extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JLabel passwordlabel;
-    private javax.swing.JPasswordField passwordtextfield;
-    private javax.swing.JButton signinbutton;
-    private javax.swing.JButton signupbutton;
-    private javax.swing.JLabel userNamelabel;
-    private javax.swing.JTextField usernametextfield;
+    public javax.swing.JLabel passwordlabel;
+    public javax.swing.JPasswordField passwordtextfield;
+    public javax.swing.JButton signinbutton;
+    public javax.swing.JButton signupbutton;
+    public javax.swing.JLabel userNamelabel;
+    public javax.swing.JTextField usernametextfield;
     // End of variables declaration                   
 }
