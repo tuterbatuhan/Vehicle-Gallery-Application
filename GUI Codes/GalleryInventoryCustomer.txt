@@ -5,16 +5,12 @@
  */
 package GUI;
 
-/**
- *
- * @author Batu
- */
-public class GalleryInventoryCustomer extends javax.swing.JPanel {
+public class GalleryInventoryCustomerPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form GalleryInventory
      */
-    public GalleryInventoryCustomer() {
+    public GalleryInventoryCustomerPanel() {
         initComponents();
     }
 
@@ -157,17 +153,17 @@ public class GalleryInventoryCustomer extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JTable SearchVehicleTable;
-    private javax.swing.JButton backtosignincustomerpagebutton;
-    private javax.swing.JButton buybutton;
-    private javax.swing.JComboBox enginetypecombobox;
-    private javax.swing.JLabel enginetypelabel;
-    private javax.swing.JComboBox enginevolumecombobox;
-    private javax.swing.JLabel enginevolumelabel;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton searchvehiclebutton;
-    private javax.swing.JButton sellbutton;
-    private javax.swing.JComboBox vehicletypecombobox;
-    private javax.swing.JLabel vehicletypelabel;
+    public javax.swing.JTable SearchVehicleTable;
+    public javax.swing.JButton backtosignincustomerpagebutton;
+    public javax.swing.JButton buybutton;
+    public javax.swing.JComboBox enginetypecombobox;
+    public javax.swing.JLabel enginetypelabel;
+    public javax.swing.JComboBox enginevolumecombobox;
+    public javax.swing.JLabel enginevolumelabel;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JButton searchvehiclebutton;
+    public javax.swing.JButton sellbutton;
+    public javax.swing.JComboBox vehicletypecombobox;
+    public javax.swing.JLabel vehicletypelabel;
     // End of variables declaration                   
 }
