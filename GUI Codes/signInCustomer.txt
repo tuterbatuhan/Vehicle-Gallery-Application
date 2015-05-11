@@ -5,16 +5,12 @@
  */
 package GUI;
 
-/**
- *
- * @author Batu
- */
-public class SignInCustomer extends javax.swing.JPanel {
+public class SignInCustomerPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form SignIn
      */
-    public SignInCustomer() {
+    public SignInCustomerPanel() {
         initComponents();
     }
 
@@ -113,15 +109,15 @@ public class SignInCustomer extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton backtomainbuton;
-    private javax.swing.JLabel choosegallerylabel;
-    private javax.swing.JLabel customernamesurnamelabel;
-    private javax.swing.JComboBox gallerycombobox;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JButton openinventorybutton;
-    private javax.swing.JLabel showcustomernamelabel;
-    private javax.swing.JLabel showcustomersurnamelabel;
-    private javax.swing.JLabel showusernamelabel;
-    private javax.swing.JLabel usernamelabel;
+    public javax.swing.JButton backtomainbuton;
+    public javax.swing.JLabel choosegallerylabel;
+    public javax.swing.JLabel customernamesurnamelabel;
+    public javax.swing.JComboBox gallerycombobox;
+    public javax.swing.JLabel jLabel3;
+    public javax.swing.JButton openinventorybutton;
+    public javax.swing.JLabel showcustomernamelabel;
+    public javax.swing.JLabel showcustomersurnamelabel;
+    public javax.swing.JLabel showusernamelabel;
+    public javax.swing.JLabel usernamelabel;
     // End of variables declaration                   
 }
