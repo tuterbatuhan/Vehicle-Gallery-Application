@@ -5,16 +5,12 @@
  */
 package GUI;
 
-/**
- *
- * @author Batu
- */
-public class SignUp extends javax.swing.JPanel {
+public class SignUpPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form SignUp
      */
-    public SignUp() {
+    public SignUpPanel() {
         initComponents();
     }
 
@@ -140,19 +136,19 @@ public class SignUp extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton backtomainbutton;
-    private javax.swing.JLabel chooseusertypelabel;
-    private javax.swing.JButton createuserbutton;
-    private javax.swing.JTextField gallerynamefield;
-    private javax.swing.JLabel gallerynamelabel;
-    private javax.swing.JTextField namefield;
-    private javax.swing.JLabel namelabel;
-    private javax.swing.JTextField passwordfield;
-    private javax.swing.JLabel passwordlabel;
-    private javax.swing.JTextField surnamefield;
-    private javax.swing.JLabel surnamelabel;
-    private javax.swing.JTextField usernamefield;
-    private javax.swing.JLabel usernamelabel;
-    private javax.swing.JComboBox usertypecombobox;
+    public javax.swing.JButton backtomainbutton;
+    public javax.swing.JLabel chooseusertypelabel;
+    public javax.swing.JButton createuserbutton;
+    public javax.swing.JTextField gallerynamefield;
+    public javax.swing.JLabel gallerynamelabel;
+    public javax.swing.JTextField namefield;
+    public javax.swing.JLabel namelabel;
+    public javax.swing.JTextField passwordfield;
+    public javax.swing.JLabel passwordlabel;
+    public javax.swing.JTextField surnamefield;
+    public javax.swing.JLabel surnamelabel;
+    public javax.swing.JTextField usernamefield;
+    public javax.swing.JLabel usernamelabel;
+    public javax.swing.JComboBox usertypecombobox;
     // End of variables declaration                   
 }
